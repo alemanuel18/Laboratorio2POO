@@ -16,19 +16,20 @@ public class GestorSecciones {
         funcionamiento.agregarSeccion("Oro", 10, 15, 75);
         funcionamiento.agregarSeccion("Plata", 12, 20, 50);
 
-        while (eleccion!=6) {
+        while (eleccion!=5) {
             if (eleccion == 1) {
                 funcionamiento.agregarReserva(seleccionarSeccion(funcionamiento));
+                System.out.println("Se a registrado la reserva");
                 eleccion=menu();
-
             }else if (eleccion==2) {
-                funcionamiento.mostrarDisponibilidad(seleccionarSeccion(funcionamiento));
+                System.out.println(funcionamiento.mostrarDisponibilidad(seleccionarSeccion(funcionamiento)));
                 eleccion=menu();
             }else if (eleccion==3) {
                 funcionamiento.eliminarReserva(seleccionarSeccion(funcionamiento));
+                System.out.println("Se a cancelado la reserva");
                 eleccion=menu();
             }else if (eleccion==4) {
-                System.out.println(funcionamiento.calcularIngresosTotales());
+                System.out.println("Las ganancias son de: "+funcionamiento.calcularIngresosTotales());
                 eleccion=menu();
             }
         }
@@ -46,7 +47,7 @@ public class GestorSecciones {
         
 
         while (verificador==false) {
-            System.out.println("\nMenu\nSeleccion lo que deses realizar\n1. Reservar Asiento\n2. Mostrar Disponibilidad\n3. Cancelar Reserva\n4. Cancelar reserva\n5. Salir");
+            System.out.println("\nMenu\nSeleccion lo que deses realizar\n1. Reservar Asiento\n2. Mostrar Disponibilidad\n3. Cancelar Reserva\n4. Calcular Ingresos\n5. Salir");
             eleccionUsuarioS=teclado.nextLine();
 
             try { 

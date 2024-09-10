@@ -28,7 +28,7 @@ public class Seccion{
     }
 
     public void eliminarReserva() {
-        asientos[filaActual][columnaActual] = (asientos[filaActual][columnaActual] == 1) ? 0 : 1;
+        asientos[filaActual][columnaActual] = (asientos[filaActual][columnaActual] == 1) ? 0 : 0;
     }
 
     public int cambiarcolumna(){
