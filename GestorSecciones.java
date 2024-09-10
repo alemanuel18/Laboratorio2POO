@@ -3,8 +3,6 @@
 //  @ Date : 10/09/2024
 //  @ Author : Alejandro Manuel Jerez Melgar 24678
 //
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
