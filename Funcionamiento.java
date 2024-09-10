@@ -1,13 +1,32 @@
+//  @ Laboratorio 2
+//  @ File Name : Funcionamiento.java
+//  @ Date : 10/09/2024
+//  @ Author : Alejandro Manuel Jerez Melgar 24678
+//
 import java.util.ArrayList;
 public class Funcionamiento {
+
+    //Atributos
     private ArrayList<Seccion> secciones = new ArrayList<>();
 
+    /**
+     * 
+     * @param nombre String
+     * @param f int
+     * @param c int 
+     * @param precioBoleto int
+     * @return Seccion
+     */
     public Seccion agregarSeccion(String nombre, int f, int c, int precioBoleto){
         Seccion nuevaSeccion=new Seccion(nombre, f, c, precioBoleto);
         secciones.add(nuevaSeccion);
         return nuevaSeccion;
     }
 
+    /**
+     * 
+     * @param nombre String
+     */
     public void agregarReserva(String nombre){
         for(Seccion seccion : secciones){
             if (seccion.getNombre().equals(nombre)) {
@@ -16,6 +35,10 @@ public class Funcionamiento {
         }
     }
 
+    /**
+     * 
+     * @param nombre String
+     */
     public void eliminarReserva(String nombre){
         for(Seccion seccion : secciones){
             if (seccion.getNombre().equals(nombre)) {
@@ -24,6 +47,11 @@ public class Funcionamiento {
         }
     }
 
+    /**
+     * 
+     * @param nombre Strign
+     * @return String
+     */
     public String mostrarDisponibilidad(String nombre) {
         StringBuilder disponibilidad = new StringBuilder();
         for (Seccion seccion : secciones) {
@@ -45,6 +73,10 @@ public class Funcionamiento {
         return disponibilidad.toString();
     }
 
+    /**
+     * 
+     * @return ingresos totatles
+     */
     public int calcularIngresosTotales() {
         int ingresosTotales = 0;
         for (Seccion seccion : secciones) {
@@ -53,6 +85,10 @@ public class Funcionamiento {
         return ingresosTotales;
     }
 
+    /**
+     * 
+     * @return Lista de Secciones
+     */
     public ArrayList<Seccion> getSecciones() {
         return secciones;
     }

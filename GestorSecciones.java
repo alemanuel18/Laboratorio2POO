@@ -1,9 +1,19 @@
+//  @ Laboratorio 2
+//  @ File Name : GestorSecciones.java
+//  @ Date : 10/09/2024
+//  @ Author : Alejandro Manuel Jerez Melgar 24678
+//
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GestorSecciones {
 
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
        
 
@@ -36,6 +46,10 @@ public class GestorSecciones {
         System.out.println("Gracias por preferirnos, hasta la proxima.");
     }
 
+    /**
+     * 
+     * @return eleccion dle menu principal
+     */
     public static int menu(){
         //Se inicializan las variables
         //Se crean los objetos
@@ -75,7 +89,7 @@ public class GestorSecciones {
     /**
      * 
      * @param funcionamiento
-     * @return La biblioteca elegida
+     * @return La seccion elegida
      */
     public static String seleccionarSeccion(Funcionamiento funcionamiento) {
         Scanner teclado=new Scanner(System.in);
