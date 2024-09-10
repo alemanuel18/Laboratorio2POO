@@ -99,14 +99,6 @@ public class Seccion{
         }
         return boletosVendidos * precioBoleto;
     }
-
-    /**
-     * 
-     * @param nombre Strign
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
     /**
      * 
      * @return asientos
