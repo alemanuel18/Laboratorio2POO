@@ -11,44 +11,24 @@ public class GestorSecciones {
         Scanner teclado=new Scanner(System.in);
         int eleccion=menu();
 
+        funcionamiento.agregarSeccion("VIP", 5, 10, 150);
+        funcionamiento.agregarSeccion("Platino", 8, 12, 100);
+        funcionamiento.agregarSeccion("Oro", 10, 15, 75);
+        funcionamiento.agregarSeccion("Plata", 12, 20, 50);
+
         while (eleccion!=6) {
             if (eleccion == 1) {
-                
+                funcionamiento.agregarReserva(seleccionarSeccion(funcionamiento));
+                eleccion=menu();
+
             }else if (eleccion==2) {
-                if (funcionamiento.getBibliotecas().isEmpty()) {
-                    System.out.println("Debe existir almenos una biblioteca para agregar un libro.");
-                }else{
-                    nombreB=seleccionarBibliotecaA(funcionamiento);
-                    System.out.println("Ingrese el nombre del libro");
-                    nombreL=teclado.nextLine();
-                    funcionamiento.agregarLibroBiblioteca(nombreB, funcionamiento.creaLibro(nombreL, code(), menu2()));
-                    System.out.println("Se a creado el libro");
-                }
+                funcionamiento.mostrarDisponibilidad(seleccionarSeccion(funcionamiento));
                 eleccion=menu();
             }else if (eleccion==3) {
-                if (funcionamiento.getBibliotecas().isEmpty()) {
-                    System.out.println("Debe existir almenos una biblioteca para agregar un usuario.");
-                }else{
-                    nombreB=seleccionarBibliotecaA(funcionamiento);
-                    System.out.println("Ingrese el nombre del usuario");
-                    nombreL=teclado.nextLine();
-                    funcionamiento.agregarUsuarioBiblioteca(nombreB, funcionamiento.creaUsuario(nombreL, code()));
-                    System.out.println("Se a creado el usuario");
-                }
+                funcionamiento.eliminarReserva(seleccionarSeccion(funcionamiento));
                 eleccion=menu();
             }else if (eleccion==4) {
-                if (funcionamiento.getBibliotecas().isEmpty()) {
-                    System.out.println("Debe existir almenos una biblioteca para agregar un prestamo");
-                }else{
-                    biblioteca= seleccionarBibliotecaB(funcionamiento);
-                    if (biblioteca.getLibros().isEmpty() || biblioteca.getUsuarios().isEmpty()) {
-                        System.out.println("Esta biblioteca no tiene libros o usuarios registrados");
-                    }else{
-                        nombreB=biblioteca.getNombre();
-                        funcionamiento.agregarPrestamoBiblioteca(nombreB, funcionamiento.crearPrestamo(funcionamiento.codigoPrestamo(fecha), seleccionarLibro(biblioteca, funcionamiento), seleccionarUsuario(biblioteca, funcionamiento)));
-                        System.out.println("Se a registrado el prestamo");
-                    }
-                }
+                System.out.println(funcionamiento.calcularIngresosTotales());
                 eleccion=menu();
             }
         }

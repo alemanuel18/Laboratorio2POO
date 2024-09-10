@@ -24,7 +24,7 @@ public class Funcionamiento {
         }
     }
 
-    public String generarDisponibilidad(String nombre) {
+    public String mostrarDisponibilidad(String nombre) {
         StringBuilder disponibilidad = new StringBuilder();
         for (Seccion seccion : secciones) {
             if (seccion.getNombre().equals(nombre)) {
